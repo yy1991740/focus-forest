@@ -1,58 +1,58 @@
-# TRAE x Vercel 部署配置
+﻿# TRAE x Vercel 閮ㄧ讲閰嶇疆
 
-## 当前项目状态
-✅ **应用开发完成**
-- 精美的 UI 界面（计时器、森林、统计、认证页面）
-- 完整的 Supabase 数据库集成
-- 5种不同的树木 SVG 资源
-- 自然的森林动画效果
+## 褰撳墠椤圭洰鐘舵€?
+鉁?**搴旂敤寮€鍙戝畬鎴?*
+- 绮剧編鐨?UI 鐣岄潰锛堣鏃跺櫒銆佹．鏋椼€佺粺璁°€佽璇侀〉闈級
+- 瀹屾暣鐨?Supabase 鏁版嵁搴撻泦鎴?
+- 5绉嶄笉鍚岀殑鏍戞湪 SVG 璧勬簮
+- 鑷劧鐨勬．鏋楀姩鐢绘晥鏋?
 
-✅ **数据库配置完成**
-- Supabase 项目：`https://anaslurquuyylxrtfjqj.supabase.co`
-- 表结构：`users`, `sessions`, `trees`
-- RLS 权限策略已配置
-- 匿名和认证用户权限已设置
+鉁?**鏁版嵁搴撻厤缃畬鎴?*
+- Supabase 椤圭洰锛歚https://zutwxkfdvzgglbzntoux.supabase.co`
+- 琛ㄧ粨鏋勶細`users`, `sessions`, `trees`
+- RLS 鏉冮檺绛栫暐宸查厤缃?
+- 鍖垮悕鍜岃璇佺敤鎴锋潈闄愬凡璁剧疆
 
-## 部署步骤
+## 閮ㄧ讲姝ラ
 
-### 1. 通过 TRAE 集成连接 Vercel
-您提供的 OAuth URL 是正确的连接方式：
+### 1. 閫氳繃 TRAE 闆嗘垚杩炴帴 Vercel
+鎮ㄦ彁渚涚殑 OAuth URL 鏄纭殑杩炴帴鏂瑰紡锛?
 ```
 https://www.trae.ai/third-party-oauth?user_id=7569780871554827280&username=yy1991740&oauth_type=vercel&redirect_url=trae%3A%2F%2Ftrae.ai-ide%2Foauth%2F%3Aoauth-type%3Ftype%3Ddeploy
 ```
 
-### 2. 环境变量配置
-在 Vercel 控制台中设置以下环境变量：
+### 2. 鐜鍙橀噺閰嶇疆
+鍦?Vercel 鎺у埗鍙颁腑璁剧疆浠ヤ笅鐜鍙橀噺锛?
 ```
-VITE_SUPABASE_URL=https://anaslurquuyylxrtfjqj.supabase.co
+VITE_SUPABASE_URL=https://zutwxkfdvzgglbzntoux.supabase.co
 VITE_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFuYXNsdXJxdXV5eWx4cnRmanFqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjI5NTU0OTksImV4cCI6MjA3ODUzMTQ5OX0.Lg2n_SQDWpNRsxHmWL4Jl4U4uKBJjlYRDFPB6NZ3VCQ
 ```
 
-### 3. 部署配置
-vercel.json 文件已创建，包含正确的路由和环境配置。
+### 3. 閮ㄧ讲閰嶇疆
+vercel.json 鏂囦欢宸插垱寤猴紝鍖呭惈姝ｇ‘鐨勮矾鐢卞拰鐜閰嶇疆銆?
 
-### 4. 构建命令
-构建命令：`npm run build`
-输出目录：`dist`
+### 4. 鏋勫缓鍛戒护
+鏋勫缓鍛戒护锛歚npm run build`
+杈撳嚭鐩綍锛歚dist`
 
-## 部署后测试
+## 閮ㄧ讲鍚庢祴璇?
 
-部署完成后，请测试以下功能：
-1. ✅ 用户注册/登录
-2. ✅ 专注计时器功能
-3. ✅ 森林页面显示树木
-4. ✅ 统计数据图表
-5. ✅ 数据持久化
+閮ㄧ讲瀹屾垚鍚庯紝璇锋祴璇曚互涓嬪姛鑳斤細
+1. 鉁?鐢ㄦ埛娉ㄥ唽/鐧诲綍
+2. 鉁?涓撴敞璁℃椂鍣ㄥ姛鑳?
+3. 鉁?妫灄椤甸潰鏄剧ず鏍戞湪
+4. 鉁?缁熻鏁版嵁鍥捐〃
+5. 鉁?鏁版嵁鎸佷箙鍖?
 
-## 常见问题解决
+## 甯歌闂瑙ｅ喅
 
-### CSRF 错误处理
-如果仍然遇到 CSRF 错误：
-1. 清除浏览器缓存和 Cookie
-2. 使用无痕模式测试
-3. 检查 Supabase 控制台中的认证设置
+### CSRF 閿欒澶勭悊
+濡傛灉浠嶇劧閬囧埌 CSRF 閿欒锛?
+1. 娓呴櫎娴忚鍣ㄧ紦瀛樺拰 Cookie
+2. 浣跨敤鏃犵棔妯″紡娴嬭瘯
+3. 妫€鏌?Supabase 鎺у埗鍙颁腑鐨勮璇佽缃?
 
-### 数据库连接问题
-确保在 Vercel 环境变量中正确设置了 Supabase URL 和密钥。
+### 鏁版嵁搴撹繛鎺ラ棶棰?
+纭繚鍦?Vercel 鐜鍙橀噺涓纭缃簡 Supabase URL 鍜屽瘑閽ャ€?
 
-项目已完全准备就绪，可以通过 TRAE 集成部署到 Vercel 了！🚀
+椤圭洰宸插畬鍏ㄥ噯澶囧氨缁紝鍙互閫氳繃 TRAE 闆嗘垚閮ㄧ讲鍒?Vercel 浜嗭紒馃殌

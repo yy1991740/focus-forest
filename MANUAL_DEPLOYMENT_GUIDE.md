@@ -1,70 +1,61 @@
-# 🚀 手动部署指南 - GitHub + Vercel
+﻿# 馃殌 鎵嬪姩閮ㄧ讲鎸囧崡 - GitHub + Vercel
 
-## 📋 部署前准备
+## 馃搵 閮ㄧ讲鍓嶅噯澶?
+### 1. GitHub 浠撳簱璁剧疆
 
-### 1. GitHub 仓库设置
+#### 鍒涘缓鏂颁粨搴?1. 璁块棶 [GitHub](https://github.com)
+2. 鐐瑰嚮鍙充笂瑙掔殑 "+" 鈫?"New repository"
+3. 浠撳簱鍚嶇О锛歚focus-forest`
+4. 鎻忚堪锛歚涓撴敞妫灄 - 鏃堕棿绠＄悊搴旂敤`
+5. 閫夋嫨 **Public**锛圴ercel 鍏嶈垂鐗堥渶瑕佸叕寮€浠撳簱锛?6. 涓嶈鍒濆鍖?README锛堟垜浠凡鏈夋枃浠讹級
+7. 鐐瑰嚮 "Create repository"
 
-#### 创建新仓库
-1. 访问 [GitHub](https://github.com)
-2. 点击右上角的 "+" → "New repository"
-3. 仓库名称：`focus-forest`
-4. 描述：`专注森林 - 时间管理应用`
-5. 选择 **Public**（Vercel 免费版需要公开仓库）
-6. 不要初始化 README（我们已有文件）
-7. 点击 "Create repository"
-
-#### 本地项目准备
-在终端中执行以下命令：
-
+#### 鏈湴椤圭洰鍑嗗
+鍦ㄧ粓绔腑鎵ц浠ヤ笅鍛戒护锛?
 ```bash
-# 初始化 Git 仓库（如果还没初始化）
-git init
+# 鍒濆鍖?Git 浠撳簱锛堝鏋滆繕娌″垵濮嬪寲锛?git init
 
-# 添加所有文件
-git add .
+# 娣诲姞鎵€鏈夋枃浠?git add .
 
-# 提交初始版本
+# 鎻愪氦鍒濆鐗堟湰
 git commit -m "Initial commit - Focus Forest App"
 
-# 连接到 GitHub 仓库（替换 YOUR_USERNAME）
-git remote add origin https://github.com/YOUR_USERNAME/focus-forest.git
+# 杩炴帴鍒?GitHub 浠撳簱锛堟浛鎹?YOUR_USERNAME锛?git remote add origin https://github.com/YOUR_USERNAME/focus-forest.git
 
-# 推送到 GitHub
+# 鎺ㄩ€佸埌 GitHub
 git push -u origin main
 ```
 
-### 2. Vercel 账户设置
+### 2. Vercel 璐︽埛璁剧疆
 
-#### 注册/登录 Vercel
-1. 访问 [Vercel](https://vercel.com)
-2. 使用 GitHub 账户登录
-3. 授权 Vercel 访问您的 GitHub 账户
+#### 娉ㄥ唽/鐧诲綍 Vercel
+1. 璁块棶 [Vercel](https://vercel.com)
+2. 浣跨敤 GitHub 璐︽埛鐧诲綍
+3. 鎺堟潈 Vercel 璁块棶鎮ㄧ殑 GitHub 璐︽埛
 
-#### 导入项目
-1. 点击 "New Project"
-2. 选择 "Import Git Repository"
-3. 找到您的 `focus-forest` 仓库
-4. 点击 "Import"
+#### 瀵煎叆椤圭洰
+1. 鐐瑰嚮 "New Project"
+2. 閫夋嫨 "Import Git Repository"
+3. 鎵惧埌鎮ㄧ殑 `focus-forest` 浠撳簱
+4. 鐐瑰嚮 "Import"
 
-## ⚙️ 项目配置
+## 鈿欙笍 椤圭洰閰嶇疆
 
-### 环境变量设置
-在 Vercel 项目设置中，添加以下环境变量：
-
+### 鐜鍙橀噺璁剧疆
+鍦?Vercel 椤圭洰璁剧疆涓紝娣诲姞浠ヤ笅鐜鍙橀噺锛?
 ```
-VITE_SUPABASE_URL=https://anaslurquuyylxrtfjqj.supabase.co
+VITE_SUPABASE_URL=https://zutwxkfdvzgglbzntoux.supabase.co
 VITE_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFuYXNsdXJxdXV5eWx4cnRmanFqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjI5NTU0OTksImV4cCI6MjA3ODUzMTQ5OX0.Lg2n_SQDWpNRsxHmWL4Jl4U4uKBJjlYRDFPB6NZ3VCQ
 ```
 
-### 构建设置
-确保以下设置正确：
-- **Framework**: React
+### 鏋勫缓璁剧疆
+纭繚浠ヤ笅璁剧疆姝ｇ‘锛?- **Framework**: React
 - **Build Command**: `npm run build`
 - **Output Directory**: `dist`
 - **Install Command**: `npm install`
 
-### Vercel 配置文件
-确保 `vercel.json` 文件存在且内容正确：
+### Vercel 閰嶇疆鏂囦欢
+纭繚 `vercel.json` 鏂囦欢瀛樺湪涓斿唴瀹规纭細
 
 ```json
 {
@@ -72,105 +63,82 @@ VITE_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFz
     { "source": "/(.*)", "destination": "/" }
   ],
   "env": {
-    "VITE_SUPABASE_URL": "https://anaslurquuyylxrtfjqj.supabase.co",
+    "VITE_SUPABASE_URL": "https://zutwxkfdvzgglbzntoux.supabase.co",
     "VITE_SUPABASE_ANON_KEY": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFuYXNsdXJxdXV5eWx4cnRmanFqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjI5NTU0OTksImV4cCI6MjA3ODUzMTQ5OX0.Lg2n_SQDWpNRsxHmWL4Jl4U4uKBJjlYRDFPB6NZ3VCQ"
   }
 }
 ```
 
-## 🚀 部署步骤
+## 馃殌 閮ㄧ讲姝ラ
 
-### 第一步：推送代码到 GitHub
+### 绗竴姝ワ細鎺ㄩ€佷唬鐮佸埌 GitHub
 ```bash
-# 确保所有更改已提交
+# 纭繚鎵€鏈夋洿鏀瑰凡鎻愪氦
 git add .
 git commit -m "Ready for deployment - Focus Forest v1.0"
 
-# 推送到 GitHub
+# 鎺ㄩ€佸埌 GitHub
 git push origin main
 ```
 
-### 第二步：在 Vercel 中设置项目
-1. 登录 [Vercel](https://vercel.com)
-2. 点击 "New Project"
-3. 选择 "Import Git Repository"
-4. 选择您的 `focus-forest` 仓库
-5. 配置项目：
-   - **Project Name**: `focus-forest`
+### 绗簩姝ワ細鍦?Vercel 涓缃」鐩?1. 鐧诲綍 [Vercel](https://vercel.com)
+2. 鐐瑰嚮 "New Project"
+3. 閫夋嫨 "Import Git Repository"
+4. 閫夋嫨鎮ㄧ殑 `focus-forest` 浠撳簱
+5. 閰嶇疆椤圭洰锛?   - **Project Name**: `focus-forest`
    - **Framework**: React
    - **Build Command**: `npm run build`
    - **Output Directory**: `dist`
 
-### 第三步：设置环境变量
-在 Vercel 项目设置页面：
-1. 点击 "Settings" 标签
-2. 选择 "Environment Variables"
-3. 添加以下变量：
-   ```
-   VITE_SUPABASE_URL = https://anaslurquuyylxrtfjqj.supabase.co
+### 绗笁姝ワ細璁剧疆鐜鍙橀噺
+鍦?Vercel 椤圭洰璁剧疆椤甸潰锛?1. 鐐瑰嚮 "Settings" 鏍囩
+2. 閫夋嫨 "Environment Variables"
+3. 娣诲姞浠ヤ笅鍙橀噺锛?   ```
+   VITE_SUPABASE_URL = https://zutwxkfdvzgglbzntoux.supabase.co
    VITE_SUPABASE_ANON_KEY = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFuYXNsdXJxdXV5eWx4cnRmanFqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjI5NTU0OTksImV4cCI6MjA3ODUzMTQ5OX0.Lg2n_SQDWpNRsxHmWL4Jl4U4uKBJjlYRDFPB6NZ3VCQ
    ```
 
-### 第四步：部署
-1. 点击 "Deploy" 按钮
-2. 等待构建完成（通常 2-3 分钟）
-3. 部署完成后，Vercel 会提供访问 URL
+### 绗洓姝ワ細閮ㄧ讲
+1. 鐐瑰嚮 "Deploy" 鎸夐挳
+2. 绛夊緟鏋勫缓瀹屾垚锛堥€氬父 2-3 鍒嗛挓锛?3. 閮ㄧ讲瀹屾垚鍚庯紝Vercel 浼氭彁渚涜闂?URL
 
-## ✅ 部署后验证
+## 鉁?閮ㄧ讲鍚庨獙璇?
+### 鍩虹鍔熻兘娴嬭瘯
+1. **璁块棶閮ㄧ讲鐨?URL**
+2. **鐢ㄦ埛娉ㄥ唽**: 鍒涘缓鏂扮敤鎴疯处鎴?3. **鐢ㄦ埛鐧诲綍**: 浣跨敤鍒涘缓鐨勮处鎴风櫥褰?4. **涓撴敞鍔熻兘**: 寮€濮嬩竴涓?25 鍒嗛挓涓撴敞浼氳瘽
+5. **妫灄鏌ョ湅**: 妫€鏌ヤ笓娉ㄥ悗鏄惁鏈夋柊鏍戞湪
+6. **缁熻鏁版嵁**: 鏌ョ湅涓撴敞鏃堕暱缁熻
 
-### 基础功能测试
-1. **访问部署的 URL**
-2. **用户注册**: 创建新用户账户
-3. **用户登录**: 使用创建的账户登录
-4. **专注功能**: 开始一个 25 分钟专注会话
-5. **森林查看**: 检查专注后是否有新树木
-6. **统计数据**: 查看专注时长统计
+### 鏁版嵁楠岃瘉
+- [ ] 鐢ㄦ埛鏁版嵁瀛樺偍鍦?`users` 琛?- [ ] 涓撴敞浼氳瘽瀛樺偍鍦?`sessions` 琛?- [ ] 鏍戞湪鏁版嵁瀛樺偍鍦?`trees` 琛?- [ ] 鏁版嵁姝ｇ‘鍏宠仈鍒扮敤鎴?
+## 馃敡 甯歌闂瑙ｅ喅
 
-### 数据验证
-- [ ] 用户数据存储在 `users` 表
-- [ ] 专注会话存储在 `sessions` 表
-- [ ] 树木数据存储在 `trees` 表
-- [ ] 数据正确关联到用户
+### 鏋勫缓澶辫触
+濡傛灉鏋勫缓澶辫触锛屾鏌ワ細
+1. **渚濊禆闂**: `npm install` 鏄惁鎴愬姛
+2. **鏋勫缓鑴氭湰**: `npm run build` 鍦ㄦ湰鍦版槸鍚︽甯稿伐浣?3. **鐜鍙橀噺**: 鏄惁鍦?Vercel 涓纭缃?4. **鏂囦欢瀹屾暣鎬?*: 纭繚鎵€鏈夋枃浠跺凡鎺ㄩ€佸埌 GitHub
 
-## 🔧 常见问题解决
+### 杩愯鏃堕敊璇?1. **妫€鏌ユ祻瑙堝櫒鎺у埗鍙?* 鏌ョ湅閿欒淇℃伅
+2. **楠岃瘉 Supabase 杩炴帴** 鏄惁姝ｅ父
+3. **妫€鏌ョ綉缁滆姹?* 鏄惁鎴愬姛
+4. **纭鏁版嵁搴撴潈闄?* 璁剧疆姝ｇ‘
 
-### 构建失败
-如果构建失败，检查：
-1. **依赖问题**: `npm install` 是否成功
-2. **构建脚本**: `npm run build` 在本地是否正常工作
-3. **环境变量**: 是否在 Vercel 中正确设置
-4. **文件完整性**: 确保所有文件已推送到 GitHub
+### 璁块棶闂
+1. **娓呴櫎娴忚鍣ㄧ紦瀛?*
+2. **浣跨敤鏃犵棔妯″紡娴嬭瘯**
+3. **妫€鏌?CORS 璁剧疆**锛堝鏋滈渶瑕侊級
 
-### 运行时错误
-1. **检查浏览器控制台** 查看错误信息
-2. **验证 Supabase 连接** 是否正常
-3. **检查网络请求** 是否成功
-4. **确认数据库权限** 设置正确
+## 馃搳 鐩戞帶鍜岀淮鎶?
+### Vercel 鍒嗘瀽
+1. 鍦?Vercel 鎺у埗鍙版煡鐪嬪垎鏋愭暟鎹?2. 鐩戞帶搴旂敤鎬ц兘鍜岄敊璇巼
+3. 鏌ョ湅璁块棶鏃ュ織
 
-### 访问问题
-1. **清除浏览器缓存**
-2. **使用无痕模式测试**
-3. **检查 CORS 设置**（如果需要）
-
-## 📊 监控和维护
-
-### Vercel 分析
-1. 在 Vercel 控制台查看分析数据
-2. 监控应用性能和错误率
-3. 查看访问日志
-
-### Supabase 监控
-1. 登录 Supabase 控制台
-2. 查看数据库使用情况
-3. 监控 API 调用次数
-4. 检查存储使用情况
-
-## 🎉 成功部署！
-
-部署成功后，您将获得：
-- **公开访问 URL**: `https://focus-forest-*.vercel.app`
-- **自动 HTTPS**: SSL 证书自动配置
-- **全球 CDN**: 快速访问速度
-- **自动部署**: 每次推送代码自动更新
-
-您的 Focus Forest 应用现在已经完全部署并可以使用了！🌲✨
+### Supabase 鐩戞帶
+1. 鐧诲綍 Supabase 鎺у埗鍙?2. 鏌ョ湅鏁版嵁搴撲娇鐢ㄦ儏鍐?3. 鐩戞帶 API 璋冪敤娆℃暟
+4. 妫€鏌ュ瓨鍌ㄤ娇鐢ㄦ儏鍐?
+## 馃帀 鎴愬姛閮ㄧ讲锛?
+閮ㄧ讲鎴愬姛鍚庯紝鎮ㄥ皢鑾峰緱锛?- **鍏紑璁块棶 URL**: `https://focus-forest-*.vercel.app`
+- **鑷姩 HTTPS**: SSL 璇佷功鑷姩閰嶇疆
+- **鍏ㄧ悆 CDN**: 蹇€熻闂€熷害
+- **鑷姩閮ㄧ讲**: 姣忔鎺ㄩ€佷唬鐮佽嚜鍔ㄦ洿鏂?
+鎮ㄧ殑 Focus Forest 搴旂敤鐜板湪宸茬粡瀹屽叏閮ㄧ讲骞跺彲浠ヤ娇鐢ㄤ簡锛侌煂测湪
