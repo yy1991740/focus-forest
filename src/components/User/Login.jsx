@@ -11,30 +11,49 @@ function Login({ toggleView }) {
     event.preventDefault();
     setError(null);
     try {
-      const { error } = await supabase.auth.signInWithPassword({
+      const { data, error } = await supabase.auth.signInWithPassword({
         email: email,
         password: password,
       });
+      
       if (error) {
+        console.log('Login error:', error);
         // 如果登录失败，尝试注册新用户（适用于演示环境）
-        if (error.message.includes('Invalid login credentials')) {
-          const { error: signUpError } = await supabase.auth.signUp({
+        if (error.message.includes('Invalid login credentials') || error.code === 'invalid_credentials') {
+          console.log('Attempting to register new user...');
+          const { data: signUpData, error: signUpError } = await supabase.auth.signUp({
             email: email,
             password: password,
           });
-          if (signUpError) throw signUpError;
+          
+          if (signUpError) {
+            console.log('Sign up error:', signUpError);
+            throw signUpError;
+          }
+          
+          console.log('Sign up successful:', signUpData);
+          
           // 注册成功后自动登录
-          const { error: loginError } = await supabase.auth.signInWithPassword({
+          const { data: loginData, error: loginError } = await supabase.auth.signInWithPassword({
             email: email,
             password: password,
           });
-          if (loginError) throw loginError;
+          
+          if (loginError) {
+            console.log('Auto login after sign up error:', loginError);
+            throw loginError;
+          }
+          
+          console.log('Auto login successful:', loginData);
         } else {
           throw error;
         }
+      } else {
+        console.log('Login successful:', data);
       }
     } catch (error) {
-      setError(error.message);
+      console.log('Final error:', error);
+      setError(error.message || '登录失败，请重试');
     }
   };
 
