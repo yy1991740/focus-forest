@@ -20,6 +20,8 @@ function Register({ toggleView }) {
           data: {
             username: username,
           },
+          // 禁用邮箱验证，立即激活账户
+          email_confirm: true
         },
       });
       if (error) throw error;
