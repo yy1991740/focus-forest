@@ -15,8 +15,24 @@ function Login({ toggleView }) {
         email: email,
         password: password,
       });
-      if (error) throw error;
-      // 登录成功消息由App.jsx处理，此处无需弹窗
+      if (error) {
+        // 如果登录失败，尝试注册新用户（适用于演示环境）
+        if (error.message.includes('Invalid login credentials')) {
+          const { error: signUpError } = await supabase.auth.signUp({
+            email: email,
+            password: password,
+          });
+          if (signUpError) throw signUpError;
+          // 注册成功后自动登录
+          const { error: loginError } = await supabase.auth.signInWithPassword({
+            email: email,
+            password: password,
+          });
+          if (loginError) throw loginError;
+        } else {
+          throw error;
+        }
+      }
     } catch (error) {
       setError(error.message);
     }
