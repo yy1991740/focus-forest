@@ -1,0 +1,107 @@
+.user-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  min-height: 100vh;
+}
+
+.user-form {
+  background: var(--white);
+  padding: 3rem;
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 420px;
+  text-align: center;
+}
+
+.user-form h2 {
+  margin-bottom: 2rem;
+  color: var(--primary-color);
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.user-form input {
+  width: 100%;
+  padding: 1rem 1.5rem;
+  margin-bottom: 1.5rem;
+  border: 2px solid var(--background-dark);
+  border-radius: 50px;
+  box-sizing: border-box;
+  background: var(--background-light);
+  color: var(--text-color-dark);
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.user-form input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  background: var(--white);
+  box-shadow: 0 0 0 4px rgba(88, 129, 87, 0.1);
+}
+
+.user-form button {
+  width: 100%;
+  padding: 1rem 2.5rem;
+  border: none;
+  border-radius: 50px;
+  background-color: var(--primary-color);
+  color: var(--white);
+  font-size: 1.2rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(88, 129, 87, 0.3);
+  transition: all 0.3s ease;
+}
+
+.user-form button:hover, .user-form button:focus {
+  background-color: var(--secondary-color);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(88, 129, 87, 0.4);
+  outline: none;
+}
+
+.error-message {
+  color: #d32f2f;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.toggle-view {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.toggle-view span {
+  color: var(--secondary-color);
+  cursor: pointer;
+  font-weight: 700;
+  transition: color 0.3s ease;
+}
+
+.toggle-view span:hover {
+  color: var(--primary-color);
+  text-decoration: underline;
+}
+
+.registration-success {
+  text-align: center;
+  padding: 3rem;
+  border-radius: 20px;
+  background: var(--white);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+  max-width: 450px;
+}
+
+.registration-success h2 {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.registration-success p {
+  color: var(--text-color-light);
+  line-height: 1.8;
+}

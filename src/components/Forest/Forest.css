@@ -1,0 +1,102 @@
+.forest-container {
+  position: relative;
+  padding: 8rem 2rem 4rem;
+  background: var(--background-light);
+  min-height: 100vh;
+  text-align: center;
+}
+
+.forest-floor {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 12rem); /* Adjust height based on padding */
+  margin-top: 2rem;
+}
+
+.tree {
+  position: absolute;
+  transition: transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+  cursor: pointer;
+  animation: grow 0.8s cubic-bezier(0.25, 0.8, 0.25, 1) forwards, 
+             sway 4s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+
+@keyframes sway {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(2deg);
+  }
+}
+
+@keyframes grow {
+  from {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.tree img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 5px 10px rgba(0,0,0,0.1));
+}
+
+.tree:hover {
+  transform: scale(1.1) rotate(2deg);
+}
+
+.view-timer-btn,
+.view-stats-btn {
+  position: absolute;
+  z-index: 10;
+}
+
+.view-timer-btn {
+  top: 2rem;
+  right: 2rem;
+}
+
+.view-stats-btn {
+  top: 6.5rem;
+  right: 2rem;
+}
+
+.empty-forest-message {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--secondary-color);
+  margin-top: 6rem;
+  padding: 3rem;
+  background: var(--white);
+  border-radius: 20px;
+  display: inline-block;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+@media (max-width: 768px) {
+  .forest-container {
+    padding: 7rem 1rem 2rem;
+  }
+
+  .view-timer-btn,
+  .view-stats-btn {
+    top: 1.5rem;
+  }
+
+  .view-stats-btn {
+    top: 5.5rem;
+  }
+
+  .empty-forest-message {
+    font-size: 1.5rem;
+    padding: 2rem;
+  }
+}

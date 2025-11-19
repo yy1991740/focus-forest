@@ -1,0 +1,56 @@
+/* 全局按钮样式 */
+.view-btn {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  position: absolute;
+}
+
+.view-btn:hover {
+  opacity: 0.9;
+}
+
+.primary-btn {
+  background-color: #6a994e;
+}
+
+.secondary-btn {
+  background-color: #a7c957;
+}
+
+/* 容器样式 */
+.container {
+  padding: 2rem;
+  min-height: 100vh;
+}
+
+.bg-light-green {
+  background-color: #f0f8ea;
+}
+
+.bg-light-gray {
+  background-color: #f9f9f9;
+}
+
+/* 标题样式 */
+.title {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #386641;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+  .view-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .container {
+    padding: 1rem;
+  }
+}

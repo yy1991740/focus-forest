@@ -1,0 +1,52 @@
+/* index.css */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
+
+:root {
+  --primary-color: #588157;
+  --secondary-color: #3a5a40;
+  --light-green: #a3b18a;
+  --background-light: #f8f9fa;
+  --background-dark: #e9ecef;
+  --text-color-dark: #212529;
+  --text-color-light: #495057;
+  --white: #fff;
+
+  font-family: 'Nunito', 'Segoe UI', 'Roboto', sans-serif;
+  line-height: 1.7;
+  font-weight: 400;
+
+  color-scheme: light;
+  color: var(--text-color-dark);
+  background: linear-gradient(170deg, var(--background-light), var(--background-dark));
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  overflow-x: hidden; /* 防止水平溢出 */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  color: var(--secondary-color);
+}
+
+button {
+  border-radius: 12px; /* 更圆润的边角 */
+  border: 1px solid transparent;
+  padding: 0.8em 1.5em;
+  font-size: 1em;
+  font-weight: 700; /* 按钮文字加粗 */
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); /* 更平滑的过渡 */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* 细微的阴影 */
+}
+
+/* 移除Vite默认的暗色模式和按钮样式 */
